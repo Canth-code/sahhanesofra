@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================
+   MARKA RENKLERİ — Logo ile uyumlu (altın/bej)
+   ============================================ */
+@theme {
+  --color-brand-50: #faf5ec;   /* En açık bej */
+  --color-brand-100: #f0e3c9;
+  --color-brand-200: #e2caa1;
+  --color-brand-300: #d4b47c;
+  --color-brand-400: #cfab6d;   /* Orta altın */
+  --color-brand-500: #c89f60;   /* LOGO ANA ALTINI */
+  --color-brand-600: #b08a4c;   /* Butonlar için */
+  --color-brand-700: #916e38;   /* Hover — koyu */
+  --color-brand-800: #6f5429;
+  --color-brand-900: #4d3a1c;   /* En koyu */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overscroll-behavior-y: none; /* kazara sayfa yenilemeyi engeller */
+}
+
+/* Mobilde taşan kartlar için momentum scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Butonlara tıklama hissi */
+.button-press {
+  transition: transform 0.15s ease;
+}
+.button-press:active {
+  transform: scale(0.95);
+}
+
+/* Slider için snap yapısı */
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch; /* iOS momentum */
+}
+
+.slider-card {
+  flex: 0 0 calc(85vw - 1rem); /* Mobilde ekranın %85'i kadar genişlik */
+  scroll-snap-align: center;
+  min-width: 280px;
+}
+
+@media (min-width: 640px) {
+  .slider-card {
+    flex: 0 0 calc(45vw - 1rem); /* Tablet 2 kolon */
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-card {
+    flex: 0 0 calc(30vw - 1rem); /* Laptop 3 kolon */
+  }
 }
