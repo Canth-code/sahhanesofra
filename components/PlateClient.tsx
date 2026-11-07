@@ -81,7 +81,7 @@ export default function PlateClient() {
                             </div>
                             <button
                                 onClick={() => remove(dish.id)}
-                                className="button-press rounded-full p-2 text-stone-400 hover:bg-red-50 hover:text-red-500"
+                                className="button-press rounded-full p-2 text-stone-400 hover:bg-red-50 hover:text-brand-500"
                                 aria-label="Ürünü kaldır"
                             >
                                 <Trash2 size={18} />
@@ -92,7 +92,7 @@ export default function PlateClient() {
 
                 <button
                     onClick={clear}
-                    className="button-press text-sm text-stone-400 underline hover:text-red-500"
+                    className="button-press text-sm text-stone-400 underline hover:text-brand-500"
                 >
                     Tabağı boşalt
                 </button>

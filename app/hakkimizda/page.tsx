@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className="grid items-center gap-10 md:grid-cols-2">
                 <div>
                     <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-                        Soframızın <span className="text-orange-600">Hikayesi</span>
+                        Soframızın <span className="text-black-600">Hikayesi</span>
                     </h1>
                     <p className="mt-4 leading-relaxed text-stone-600">
                         Şahhane Sofra, anneannelerimizin mutfağından gelen tarifleri modern
@@ -46,17 +46,17 @@ export default function AboutPage() {
 
                     <div className="mt-6 flex flex-wrap gap-6 text-sm text-stone-500">
             <span className="flex items-center gap-1.5">
-              <Clock size={16} className="text-orange-500" /> Her gün 08:00 - 01:00
+              <Clock size={16} className="text-black-500" /> Her gün 08:00 - 01:00
             </span>
                         <span className="flex items-center gap-1.5">
-              <MapPin size={16} className="text-orange-500" /> Üçtutlar, Dr. İlhan Gürel Cd. 12/c, Çorum Merkez
+              <MapPin size={16} className="text-black-500" /> Üçtutlar, Dr. İlhan Gürel Cd. 12/c, Çorum Merkez
             </span>
                     </div>
                 </div>
 
                 <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl shadow-2xl">
                     <Image
-                        src="/images/elibogrunde.jpg"
+                        src="/images/elibogrunde.png"
                         alt="Şahhane Sofra mutfağı"
                         fill
                         className="object-cover"
@@ -73,7 +73,7 @@ export default function AboutPage() {
                         key={v.title}
                         className="rounded-2xl bg-white p-6 ring-1 ring-stone-100"
                     >
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-black-600">
               <v.icon size={24} />
             </span>
                         <h3 className="mt-4 font-bold">{v.title}</h3>

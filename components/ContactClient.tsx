@@ -68,7 +68,7 @@ export default function ContactClient() {
                                     setSent(false);
                                     setForm({ name: "", phone: "", date: "", time: "", guests: "2", note: "" });
                                 }}
-                                className="button-press mt-6 rounded-full bg-orange-600 px-6 py-2.5 font-semibold text-white shadow-lg shadow-orange-600/25"
+                                className="button-press mt-6 rounded-full bg-brand-600 px-6 py-2.5 font-semibold text-white shadow-lg shadow-orange-600/25"
                             >
                                 Yeni rezervasyon
                             </button>
@@ -92,7 +92,7 @@ export default function ContactClient() {
                                         value={form.name}
                                         onChange={handleChange}
                                         placeholder="Adınız Soyadınız"
-                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-orange-500"
+                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-brand-500"
                                     />
                                 </div>
                                 <div>
@@ -106,7 +106,7 @@ export default function ContactClient() {
                                         value={form.phone}
                                         onChange={handleChange}
                                         placeholder="05XXXXXXXXX"
-                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-orange-500"
+                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-brand-500"
                                     />
                                 </div>
                             </div>
@@ -122,7 +122,7 @@ export default function ContactClient() {
                                         name="date"
                                         value={form.date}
                                         onChange={handleChange}
-                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-orange-500"
+                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-brand-500"
                                     />
                                 </div>
                                 <div>
@@ -135,7 +135,7 @@ export default function ContactClient() {
                                         name="time"
                                         value={form.time}
                                         onChange={handleChange}
-                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-orange-500"
+                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-brand-500"
                                     />
                                 </div>
                                 <div>
@@ -146,7 +146,7 @@ export default function ContactClient() {
                                         name="guests"
                                         value={form.guests}
                                         onChange={handleChange}
-                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-orange-500"
+                                        className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-brand-500"
                                     >
                                         {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12].map((n) => (
                                             <option key={n} value={n}>
@@ -167,13 +167,13 @@ export default function ContactClient() {
                                     onChange={handleChange}
                                     rows={3}
                                     placeholder="Örn: Doğum günü kutlaması, pencere kenarı istiyoruz..."
-                                    className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-orange-500"
+                                    className="w-full rounded-xl border-stone-200 bg-stone-50 px-4 py-2.5 ring-1 outline-none transition focus:ring-2 focus:ring-brand-500"
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="button-press inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-600 py-3 font-semibold text-white shadow-lg shadow-orange-600/25 hover:bg-orange-700"
+                                className="button-press inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 py-3 font-semibold text-white shadow-lg shadow-orange-600/25 hover:bg-brand-700"
                             >
                                 <Send size={18} /> Rezervasyon Talebi Gönder
                             </button>
@@ -188,14 +188,14 @@ export default function ContactClient() {
                     <h3 className="font-bold">Direkt Ulaşın</h3>
                     <div className="mt-3 space-y-3 text-sm text-stone-600">
                         <p className="flex items-center gap-2">
-                            <Phone size={16} className="text-orange-500" /> 0 (533) 630 46 19
+                            <Phone size={16} className="text-brand-500" /> 0 (533) 630 46 19
                         </p>
                         <p className="flex items-center gap-2">
-                            <MapPin size={16} className="text-orange-500" /> Üçtutlar, Dr. İlhan Gürel Cd. 12/c, Çorum Merkez
+                            <MapPin size={16} className="text-brand-500" /> Üçtutlar, Dr. İlhan Gürel Cd. 12/c, Çorum Merkez
                         </p>
                     </div>
                 </div>
-                <div className="rounded-2xl bg-orange-600 p-6 text-white">
+                <div className="rounded-2xl bg-brand-600 p-6 text-white">
                     <h3 className="font-bold">Çalışma Saatleri</h3>
                     <div className="mt-3 space-y-1.5 text-sm text-orange-100">
                         <p className="flex justify-between">

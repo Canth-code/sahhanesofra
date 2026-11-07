@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Flame, Leaf } from "lucide-react";
+import { Flame, Leaf, TriangleAlert} from "lucide-react";
 import type { Dish } from "@/lib/data";
 
 interface FoodCardProps {
@@ -59,17 +59,17 @@ export default function FoodCard({ dish, flippable = true }: FoodCardProps) {
                     </div>
                 </div>
 
-                {/* ARKA YÜZ - Kalori + Malzemeler */}
-                <div className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 p-5 text-white shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                {/* ARKA YÜZ */}
+                <div className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 p-5 text-white shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <div>
                         <h3 className="text-lg font-bold">{dish.name}</h3>
                         <div className="mt-3 flex items-center gap-2 rounded-xl bg-white/15 px-3 py-2">
                             <Flame size={18} />
                             <span className="font-semibold">{dish.calories} kcal</span>
-                            <p className="mt-1 text-xs text-brand-100">
-                                P: {dish.protein}g • K: {dish.carbs}g • Y: {dish.fat}g
-                            </p>
                         </div>
+                        <p className="mt-2 text-xs text-brand-100">
+                            P: {dish.protein}g • K: {dish.carbs}g • Y: {dish.fat}g
+                        </p>
                         <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-brand-100">
                             Malzemeler
                         </p>
@@ -80,8 +80,13 @@ export default function FoodCard({ dish, flippable = true }: FoodCardProps) {
                                 </li>
                             ))}
                         </ul>
+                        {dish.allergens && dish.allergens.length > 0 && (
+                            <p className="mt-4 flex items-center gap-1.5 rounded-xl bg-amber-400/10 px-3 py-2 text-xs font-medium text-amber-300 ring-1 ring-amber-300/30">
+                                <TriangleAlert size={12} /> {dish.allergens.join(", ")}
+                            </p>
+                        )}
                     </div>
-                    <p className="text-center text-xs text-brand-200">
+                    <p className="mt-4 text-center text-xs text-brand-200">
                         Geri dönmek için tekrar dokun
                     </p>
                 </div>

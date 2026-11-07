@@ -3,11 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Flame, X, Leaf, ZoomIn } from "lucide-react";
+import { Flame, X, Leaf, ZoomIn, PlusCircle, TriangleAlert } from "lucide-react";
 import { dishes, type Dish } from "@/lib/data";
 import FoodCard from "@/components/FoodCard";
 import { usePlate } from "@/lib/store";
-import { PlusCircle } from "lucide-react";
 
 
 const categories = ["Tümü", "Çorba", "Ana Yemek", "Özel", "Tepsi", "Pide", "Salata", "Tatlı", "İçecek"] as const;
@@ -220,7 +219,27 @@ export default function MenuClient() {
                                     </motion.span>
                                 ))}
                             </div>
-
+                            {selected.allergens && selected.allergens.length > 0 && (
+                                <>
+                                    <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-amber-600">
+                                        Alerjen Bilgisi
+                                    </p>
+                                    <div className="mt-2 flex flex-wrap gap-2">
+                                        {selected.allergens.map((al) => (
+                                            <span
+                                                key={al}
+                                                className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1.5 text-sm text-amber-800 ring-1 ring-amber-200"
+                                            >
+                    <TriangleAlert size={13} /> {al}
+                </span>
+                                        ))}
+                                    </div>
+                                    <p className="mt-3 text-xs text-stone-400">
+                                        Alerjiniz varsa lütfen sipariş öncesinde personelimizi bilgilendirin.
+                                        Alerjen bilgileri yöresel tarife göre hazırlanmıştır; çapraz temas olabilir.
+                                    </p>
+                                </>
+                            )}
                             <div className="mt-6 flex items-center justify-between rounded-2xl bg-stone-50 p-4 ring-1 ring-stone-100">
                                 <span className="text-2xl font-extrabold text-brand-700">{selected.price}₺</span>
                                 <button

@@ -4,34 +4,35 @@ export interface Dish {
     description: string;
     price: number;
     calories: number;
-    protein: number;      // 👈 YENİ (gram)
-    carbs: number;        // 👈 YENİ (gram)
-    fat: number;          // 👈 YENİ (gram)
+    protein: number;
+    carbs: number;
+    fat: number;
     ingredients: string[];
+    allergens?: string[];
     category:"Çorba" | "Ana Yemek" | "Özel" | "Tepsi"| "Pide" | "Salata" | "Tatlı" | "İçecek";
-    image: string; // <-- FOTOĞRAF YOLLARINI DOLDURUN (/images/kofte.jpg gibi)
+    image: string;
     featured?:boolean;
 }
 
 export const dishes: Dish[] = [
-    // ===== ÇORBA =====
     {
         id: 1,
         name: "Mercimek",
-        description: "Klasik sarı mercimek",
-        price: 175,
-        calories: 117,
-        protein: 14,
-        carbs: 4,
+        description: "Sıcak ve ipeksi sarı",
+        allergens: ["Gluten", "Süt", "Yumurta"],
+        price: 150,
+        calories: 160,
+        protein: 8,
+        carbs: 22,
         fat: 5,
-        ingredients: ["Sarı Mercimek", "Soğan", "Havuç", "Tereyağı"],
+        ingredients: ["Kırmızı Mercimek", "Soğan", "Tereyağı"],
         category: "Çorba",
-        image: "/images/mercimek.jpg",
+        image: "/images/mercimek.png",
     },
     {
         id: 2,
         name: "Ezogelin",
-        description: "Karbohidrat:~24 g | Protein:~6 g | Yağ:~6 g | Lif:~4.8 g ",
+        description: "Baharatlı ",
         price: 150,
         calories: 174,
         protein: 14,
@@ -44,12 +45,12 @@ export const dishes: Dish[] = [
     {
         id: 3,
         name: "Tavuk Suyu",
-        description: "Karbohidrat:~4 g | Protein:~14 g | Yağ:~5 g | Lif:~0.5 g ",
-        price: 175,
+        description: "Salçalı Şehriyeli",
+        price: 150,
         calories: 117,
         protein: 14,
         carbs: 4,
-        fat: 5,
+        fat: 0.5,
         ingredients: ["Tavuk Eti", "Şehriye", "Pirinç", "Tuz", "Maydanoz"],
         category: "Çorba",
         image: "/images/tavuksuyu.png",
@@ -59,7 +60,7 @@ export const dishes: Dish[] = [
     {
         id: 4,
         name: "Kellepaça",
-        description: "Karbohidrat:~1 g | Protein:~20 g | Yağ:~15 g | Lif:~0 g ",
+        description: "Kellepaca eti 10 saat kaynamis kemik suyu",
         price: 300,
         calories: 219,
         protein: 14,
@@ -67,7 +68,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kelle Paça", "Sarımsak", "Tuz", "Pul Biber", "Limon"],
         category: "Çorba",
-        image: "/images/kellepaca.jpg",
+        image: "/images/kellepaca.png",
     },
     {
         id: 5,
@@ -80,7 +81,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Ayak Paça", "Soğan", "Sarımsak", "Kimyon", "Pul Biber"],
         category: "Çorba",
-        image: "/images/ayakpaca.jpg",
+        image: "/images/ayakpaca.png",
     },
     {
         id: 6,
@@ -93,7 +94,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dil", "Paça", "Soğan", "Sarımsak", "Kimyon"],
         category: "Çorba",
-        image: "/images/dilpaca.jpg",
+        image: "/images/dilpaca.png",
     },
     {
         id: 7,
@@ -106,7 +107,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["İşkembe", "Sarımsak", "Sirke", "Pul Biber", "Tuz"],
         category: "Çorba",
-        image: "/images/iskembe.jpg",
+        image: "/images/iskembe.png",
     },
     {
         id: 8,
@@ -119,7 +120,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Bağırsak", "Tuz", "Soğan", "Sumak", "Limon"],
         category: "Çorba",
-        image: "/images/tuzlama.jpg",
+        image: "/images/tuzlama.png",
     },
     {
         id: 9,
@@ -200,7 +201,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kuzu Eti", "Kuyruk Yağı", "Soğan", "Baharat"],
         category: "Ana Yemek",
-        image: "/images/sistava.jpg",
+        image: "/images/sistava.png",
     },
     {
         id: 15,
@@ -239,7 +240,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Kıyma", "Cacık", "Lavaş", "Domades Sosu", "Tereyağı"],
         category: "Ana Yemek",
-        image: "/images/beyti.jpg",
+        image: "/images/beyti.png",
     },
     {
         id: 18,
@@ -252,7 +253,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Döner Et", "Lavaş", "Cacık", "Domades Sosu", "Baharat"],
         category: "Ana Yemek",
-        image: "/images/etdonerbeyti.jpg",
+        image: "/images/etdonerbeyti.png",
     },
     {
         id: 19,
@@ -265,7 +266,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Döner Et", "Lavaş", "Cacık", "Domades Sosu", "Baharat"],
         category: "Ana Yemek",
-        image: "/images/kiremittetavuka.jpg",
+        image: "/images/kiremittetavuka.png",
     },
     {
         id: 20,
@@ -292,7 +293,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Kebap", "Kiremit Pide", "Tereyağı", "Domades Sosu", "Ayran"],
         category: "Özel",
-        image: "/images/kiremiteiskender.jpg",
+        image: "/images/kiremiteiskender.png",
         featured: true,
     },
 
@@ -322,7 +323,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kömbe Köfte", "Pirinç Pilavı", "Cacık", "Domades", "Baharat"],
         category: "Tepsi",
-        image: "/images/tepsikofte.jpg",
+        image: "/images/tepsikofte.png",
     },
     {
         id: 24,
@@ -335,7 +336,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Tavuk But", "Patates", "Domades", "Sivri Biber", "Tereyağı"],
         category: "Tepsi",
-        image: "/images/tepsitavuk.jpg",
+        image: "/images/tepsitavuk.png",
     },
     {
         id: 25,
@@ -363,7 +364,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Et döner", "Kaşar Peyniri", "Hamur", "Tereyağı", "Domates", "Biber"],
         category: "Pide",
-        image: "/images/sahhanespecial.jpg",
+        image: "/images/sahhanespecial.png",
     },
     {
         id: 27,
@@ -376,7 +377,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Kıyma", "Kaşar Peyniri", "Maydanoz", "Hamur", "Baharat"],
         category: "Pide",
-        image: "/images/kimayali-kaasari.jpg",
+        image: "/images/kimayali-kaasari.png",
     },
     {
         id: 28,
@@ -389,7 +390,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kaşar Peyniri", "Hamur", "Tereyağı", "Maydanoz"],
         category: "Pide",
-        image: "/images/sade-kaasari.jpg",
+        image: "/images/sade-kaasari.png",
     },
     {
         id: 29,
@@ -402,7 +403,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kuşbaşı Et", "Soğan", "Domades", "Biber", "Hamur"],
         category: "Pide",
-        image: "/images/kusbasipide.jpg",
+        image: "/images/kusbasipide.png",
     },
     {
         id: 30,
@@ -415,7 +416,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Kıyma", "Maydanoz", "Domades", "Biber", "Un"],
         category: "Pide",
-        image: "/images/lahmacun.jpg",
+        image: "/images/lahmacun.png",
     },
     {
         id: 31,
@@ -428,7 +429,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kıyma", "Hamur", "Tereyağı", "Maydanoz", "Baharat"],
         category: "Pide",
-        image: "/images/bafrapidesi.jpg",
+        image: "/images/bafrapidesi.png",
     },
     {
         id: 32,
@@ -441,7 +442,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Kıyma", "Soğan", "Hamur", "Tereyağı", "Baharat"],
         category: "Pide",
-        image: "/images/kimyalipide.jpg",
+        image: "/images/kimyalipide.png",
     },
     {
         id: 33,
@@ -454,7 +455,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kıyma", "Hamur", "Peynir", "Soğan", "Yeşillik"],
         category: "Pide",
-        image: "/images/gorelepidesi.jpg",
+        image: "/images/gorelepidesi.png",
     },
     {
         id: 34,
@@ -467,7 +468,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Dana Kıyma", "Baharat", "Maydanoz", "Domades", "Biber"],
         category: "Pide",
-        image: "/images/anteplahmacun.jpg",
+        image: "/images/anteplahmacun.png",
     },
     {
         id: 35,
@@ -480,7 +481,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kıyma", "Hamur", "Peynir", "Maydanoz", "Tereyağı"],
         category: "Pide",
-        image: "/images/trabzonpidesi.jpg",
+        image: "/images/trabzonpidesi.png",
     },
     {
         id: 36,
@@ -493,7 +494,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Sosis", "Mantar", "Sivri Biber", "Kaşar", "Hamur"],
         category: "Pide",
-        image: "/images/dortmevsimpide.jpg",
+        image: "/images/dortmevsimpide.png",
     },
 
     // ===== BİZE ÖZEL PİDE =====
@@ -508,7 +509,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kıyma", "Kaşar", "Kuşbaşı Et", "Mantar", "Biber", "Hamur"],
         category: "Özel",
-        image: "/images/sahhanespecial.jpg",
+        image: "/images/sahhanespecial.png",
         featured: true,
     },
     {
@@ -522,7 +523,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Kıyma", "Kaşar", "Maydanoz", "Hamur", "Baharat"],
         category: "Pide",
-        image: "/images/kasarlilahmacun.jpg",
+        image: "/images/kasarlilahmacun.png",
     },
 
     // ===== SALATALAR =====
@@ -563,7 +564,7 @@ export const dishes: Dish[] = [
         fat: 5,
         ingredients: ["Tavuk Göğsü", "Marul", "Domades", "Mısır", "Zeytinyağı"],
         category: "Salata",
-        image: "/images/tavuklusalata.jpg",
+        image: "/images/tavuklusalata.png",
     },
 
     // ===== TATLILAR =====
