@@ -57,7 +57,7 @@ export default function Hero() {
                     {/* Fotoğraf + yüklenmeden önceki yumuşak zemin */}
                     <div className="relative h-full w-full bg-gradient-to-br from-brand-200 to-brand-400">
                         <Image
-                            src="/images/elibogrunde.png"
+                            src="/images/sahhanespecial.png"
                             alt="Şahhane Sofra özel yemeği"
                             fill
                             className="object-cover"
@@ -72,7 +72,7 @@ export default function Hero() {
                         className="absolute bottom-4 left-4 rounded-2xl bg-white/90 px-4 py-2 shadow-lg backdrop-blur"
                     >
                         <p className="text-xs text-stone-500">Şahhane Special</p>
-                        <p className="text-sm font-bold text-brand-700">480 kcal</p>
+                        <p className="text-sm font-bold text-brand-700">825 kcal</p>
                     </motion.div>
                 </motion.div>
             </div>
