@@ -79,3 +79,7 @@ export default function Hero() {
         </section>
     );
 }
+
+git add .
+    git commit -m "Fotograf eksikleri eklendi"
+git push
